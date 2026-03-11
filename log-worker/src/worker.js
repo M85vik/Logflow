@@ -5,6 +5,7 @@ import { connectDB } from "./db.js";
 import { processLog } from "./logProcessor.js";
 import os from "os";
 import express from "express";
+import cors from "cors";
 const STREAM = "logs-stream";
 const GROUP = "log-workers";
 
