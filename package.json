@@ -1,0 +1,21 @@
+{
+  "name": "logger-platform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M85vik/Logflow.git"
+  },
+  "keywords": [],
+  "author": "Vikas Sharma",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/M85vik/Logflow/issues"
+  },
+  "homepage": "https://github.com/M85vik/Logflow#readme"
+}
