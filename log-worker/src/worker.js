@@ -4,10 +4,28 @@ import { redis } from "./redis.js";
 import { connectDB } from "./db.js";
 import { processLog } from "./logProcessor.js";
 import os from "os";
+import express from "express";
 const STREAM = "logs-stream";
 const GROUP = "log-workers";
 
 const CONSUMER = `${os.hostname()}-${process.pid}`;
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+app.use(cors());
+
+// Health endpoint for uptime ping
+app.get("/", (req, res) => {
+  res.send("log-worker alive");
+});
+
+app.get("/health", (req, res) => {
+  res.json({ status: "ok", worker: CONSUMER });
+});
+
+app.listen(PORT, () => {
+  console.log(`Worker ping server running on port ${PORT}`);
+});
 
 const ensureStreamGroup = async () => {
   try {
