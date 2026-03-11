@@ -56,7 +56,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchLogs = async () => {
-      const res = await axios.get("http://localhost:4000/logs");
+      const res = await axios.get("https://logflow-mtzh.onrender.com/logs");
       if (res) setLogs(res.data);
     };
 
